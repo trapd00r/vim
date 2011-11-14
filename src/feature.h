@@ -172,7 +172,7 @@
  *			greek.
  */
 #ifdef FEAT_BIG
-# define FEAT_LANGMAP
+/*XXX # define FEAT_LANGMAP*/
 #endif
 
 /*
@@ -304,7 +304,7 @@
  * Disabled for EBCDIC as it requires multibyte.
  */
 #if defined(FEAT_BIG) && !defined(EBCDIC)
-# define FEAT_RIGHTLEFT
+/*XXX # define FEAT_RIGHTLEFT*/
 #endif
 
 /*
@@ -329,7 +329,7 @@
  * Disabled for EBCDIC as it requires multibyte.
  */
 #if defined(FEAT_BIG) && !defined(WIN16) && SIZEOF_INT >= 4 && !defined(EBCDIC)
-# define FEAT_ARABIC
+/*XXX # define FEAT_ARABIC*/
 #endif
 #ifdef FEAT_ARABIC
 # ifndef FEAT_RIGHTLEFT
@@ -600,7 +600,7 @@
  * +cryptv		Encryption (by Mohsin Ahmed <mosh@sasi.com>).
  */
 #if defined(FEAT_NORMAL) && !defined(FEAT_CRYPT) || defined(PROTO)
-# define FEAT_CRYPT
+/*XXX # define FEAT_CRYPT*/
 #endif
 
 /*
