@@ -3499,7 +3499,12 @@ win_line(wp, lnum, startrow, endrow, nochange)
 		    /* When 'cursorline' is set highlight the line number of
 		     * the current line differently. */
 		    if (wp->w_p_cul && lnum == wp->w_cursor.lnum)
-			char_attr = hl_combine_attr(hl_attr(HLF_CUL), char_attr);
+/*--------------------------------------------------
+*  Change this so that current line number has its own attr separate from
+*  current line, so that it may be changed independently.
+*  LHB
+*--------------------------------------------------*/
+			char_attr = hl_attr(HLF_CLN);
 #endif
 		}
 	    }
