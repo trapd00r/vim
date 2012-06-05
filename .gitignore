@@ -1,0 +1,16 @@
+ .gitignore
+ dist/
+ runtime/doc/options.txt.orig
+ src/auto/config.cache
+ src/auto/config.h
+ src/auto/config.log
+ src/auto/config.mk
+ src/auto/config.status
+ src/auto/if_perl.c
+ src/auto/osdef.h
+ src/auto/pathdef.c
+ src/objects/
+ src/option.c.orig
+ src/screen.c.orig
+ src/wim
+ src/xxd/xxd
