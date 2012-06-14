@@ -746,6 +746,10 @@ let s:difffillchar = &fillchars[matchend(&fillchars, 'diff:')]
 if s:difffillchar == ''
   let s:difffillchar = '-'
 endif
+let s:numfillchar = &fillchars[matchend(&fillchars, 'num:')]
+if s:numfillchar == ''
+  let s:numfillchar = ' '
+endif
 
 let s:foldId = 0
 
@@ -792,7 +796,7 @@ while s:lnum <= s:end
 
   " Start the line with the line number.
   if s:settings.number_lines
-    let s:numcol = repeat(' ', s:margin - 1 - strlen(s:lnum)) . s:lnum . ' '
+    let s:numcol = repeat(' ', s:margin - 1 - strlen(s:lnum)) . s:lnum . s:numfillchar
   else
     let s:numcol = ""
   endif
