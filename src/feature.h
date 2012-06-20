@@ -899,9 +899,9 @@
  * USR_VIMRC_FILE2	Name of alternate user .vimrc file.
  * USR_VIMRC_FILE3	Name of alternate user .vimrc file.
  */
-/* #define USR_VIMRC_FILE	"~/foo/.vimrc" */
-/* #define USR_VIMRC_FILE2	"~/bar/.vimrc" */
-/* #define USR_VIMRC_FILE3	"$VIM/.vimrc" */
+#define USR_VIMRC_FILE 	"~/etc/vim/vimrc"
+#define USR_VIMRC_FILE2	"$VIMRUNTIME/vimrc"
+#define USR_VIMRC_FILE3	"~/.vimrc"
 
 /*
  * EVIM_FILE		Name of the evim.vim script file
