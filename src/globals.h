@@ -1161,6 +1161,7 @@ EXTERN int	fill_vert INIT(= ' ');
 EXTERN int	fill_fold INIT(= '-');
 EXTERN int	fill_diff INIT(= '-');
 #endif
+EXTERN int	fill_num INIT(= ' ');
 
 #ifdef FEAT_VISUAL
 /* Whether 'keymodel' contains "stopsel" and "startsel". */

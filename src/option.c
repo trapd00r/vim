@@ -7117,6 +7117,7 @@ set_chars_option(varp)
 	{&fill_vert,	"vert"},
 	{&fill_fold,	"fold"},
 	{&fill_diff,	"diff"},
+	{&fill_num,	"num"},
     };
 #endif
     static struct charstab lcstab[] =

@@ -3479,8 +3479,26 @@ win_line(wp, lnum, startrow, endrow, nochange)
 			    /* 'relativenumber', don't use negative numbers */
 			    num = labs((long)get_cursor_rel_lnum(wp, lnum));
 
-			sprintf((char *)extra, "%*ld ",
-						number_width(wp), num);
+			sprintf((char *)extra, "%*ld%c",
+					    number_width(wp), num, fill_num);
+			if (wp->w_skipcol > 0)
+			    for (p_extra = extra; *p_extra == ' '; ++p_extra)
+				*p_extra = '-';
+#ifdef FEAT_RIGHTLEFT
+			if (wp->w_p_rl)		    /* reverse line numbers */
+			    rl_mirror(extra);
+#endif
+			p_extra = extra;
+			c_extra = NUL;
+		    }
+		    else if (wp->w_p_nu && fill_num != ' ')
+		    {
+			int n;
+			for (n = 0; n < number_width(wp); n++)
+			    extra[n] = ' ';
+			extra[n++] = fill_num;
+			extra[n] = 0;
+
 			if (wp->w_skipcol > 0)
 			    for (p_extra = extra; *p_extra == ' '; ++p_extra)
 				*p_extra = '-';
