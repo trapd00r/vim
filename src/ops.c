@@ -26,7 +26,7 @@
 /*
  * Symbolic names for some registers.
  */
-#define DELETION_REGISTER	36
+#define DELETION_REGISTER	0
 #ifdef FEAT_CLIPBOARD
 # define STAR_REGISTER		37
 #  ifdef FEAT_X11

@@ -147,7 +147,7 @@ CTRL-R {0-9a-z"%#:-=.}					*c_CTRL-R* *c_<C-R>*
 			'+'	the clipboard contents
 			'/'	the last search pattern
 			':'	the last command-line
-			'-'	the last small (less than a line) delete
+			'-'	the last small delete  (NOTE: see |quote_-||)
 			'.'	the last inserted text
 							*c_CTRL-R_=*
 			'='	the expression register: you are prompted to
