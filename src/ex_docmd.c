@@ -2920,8 +2920,8 @@ find_command(eap, full)
 #ifdef FEAT_USR_CMDS
 	/* Look for a user defined command as a last resort.  Let ":Print" be
 	 * overruled by a user defined command. */
-	if ((eap->cmdidx == CMD_SIZE || eap->cmdidx == CMD_Print)
-		&& *eap->cmd >= 'A' && *eap->cmd <= 'Z')
+	if ((eap->cmdidx == CMD_SIZE || eap->cmdidx == CMD_Print))
+		/* nancy XXX && *eap->cmd >= 'A' && *eap->cmd <= 'Z')*/
 	{
 	    /* User defined commands may contain digits. */
 	    while (ASCII_ISALNUM(*p))
@@ -3266,7 +3266,7 @@ set_one_cmd_context(xp, buff)
 	    p = cmd + 1;
 	}
 #ifdef FEAT_USR_CMDS
-	else if (cmd[0] >= 'A' && cmd[0] <= 'Z')
+	else if ((cmd[0] >= 'A' && cmd[0] <= 'Z' || cmd[0] >= 'a' && cmd[0] <= 'z'))
 	{
 	    ea.cmd = cmd;
 	    p = find_ucmd(&ea, p, NULL, xp,
@@ -5695,11 +5695,13 @@ ex_command(eap)
     {
 	uc_list(name, end - name);
     }
+    /*
     else if (!ASCII_ISUPPER(*name))
     {
 	EMSG(_("E183: User defined commands must start with an uppercase letter"));
 	return;
     }
+    */
     else if ((name_len == 1 && *name == 'X')
 	  || (name_len <= 4
 		  && STRNCMP(name, "Next", name_len > 4 ? 4 : name_len) == 0))
