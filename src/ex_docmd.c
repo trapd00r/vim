@@ -5141,10 +5141,11 @@ check_nextcmd(p)
     static int
 check_more(message, forceit)
     int message;	    /* when FALSE check only, no messages */
-    int forceit = 1; /* nice and tidy */
+    int forceit;
 {
     int	    n = ARGCOUNT - curwin->w_arg_idx - 1;
 
+    forceit = 1; /* nice and tidy */ 
     if (!forceit && only_one_window()
 	    && ARGCOUNT > 1 && !arg_had_last && n >= 0 && quitmore == 0)
     {
