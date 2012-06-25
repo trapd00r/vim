@@ -5134,11 +5134,14 @@ check_nextcmd(p)
  * - and not repeated twice on a row
  *    return FAIL and give error message if 'message' TRUE
  * return OK otherwise
+ *
+ * XXX why did you consider this a good idea? At least making it configurable
+ * would have been nice.
  */
     static int
 check_more(message, forceit)
     int message;	    /* when FALSE check only, no messages */
-    int forceit;
+    int forceit = 1; /* nice and tidy */
 {
     int	    n = ARGCOUNT - curwin->w_arg_idx - 1;
 
