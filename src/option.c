@@ -2922,7 +2922,7 @@ static struct vimoption
 #ifdef FEAT_MBYTE
 static char *(p_ambw_values[]) = {"single", "double", NULL};
 #endif
-static char *(p_bg_values[]) = {"light", "dark", NULL};
+static char *(p_bg_values[]) = {"light", "bright", "dark", NULL};
 static char *(p_nf_values[]) = {"octal", "hex", "alpha", NULL};
 static char *(p_ff_values[]) = {FF_UNIX, FF_DOS, FF_MAC, NULL};
 #ifdef FEAT_CRYPT
